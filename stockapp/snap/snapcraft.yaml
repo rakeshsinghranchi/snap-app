@@ -1,0 +1,23 @@
+name: stockapp
+version: '0.1'
+summary: This is a sample .NET Core 2.1 based stock application
+description: |
+  This is a sample .NET Core 2.1 based stock application
+
+grade: devel
+confinement: strict
+
+apps:
+  stockapp:
+    command: ./stockapp
+    plugs:
+      - network 
+      - network-bind
+      - removable-media
+      - home
+parts:
+  stockapp:
+    plugin: dotnet
+    dotnet-runtime-version: 2.1.0
+    source: .
+    
